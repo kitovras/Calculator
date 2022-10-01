@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Калькулятор учебный</title>
+    </head>
+
+    <body>
+        <script>
+            /* 
+            switch (a) {
+                case "...":
+                    document.write("...");
+                    break;
+                default:
+                    document.write("по умолчанию");
+                    break;
+            }
+            
+            */
+            function calculator(){
+                var numOne = document.getElementById("fieldOne").value;
+                var numTwo = document.getElementById("fieldTwo").value;
+                var operation = document.getElementById("operation").value;
+                var result = document.getElementById("result");
+                
+                if(!isNaN(parseInt(numOne)) && !isNaN(parseInt(numTwo))){
+                    numOne = Number(numOne);
+                    numTwo = Number(numTwo);
+                    switch (operation) {
+                        case "+":
+                        result.value = numOne + numTwo;
+                        break;
+
+                        case "-":
+                        result.value = numOne - numTwo;
+                        break;
+
+                        case "*": 
+                        result.value = numOne * numTwo;
+                        break;
+
+                        case "/": 
+                        if(numTwo !== 0){
+                            result.value = numOne / numTwo;
+                        }
+                        else {
+                            alert("Нельзя делить на ноль");
+                        }
+                        break;
+                    }
+                }
+                else {
+                    alert("Неверный тип входных данных");
+                }
+            }
+        </script>
+
+        <h1 style="text-align: center">Ку-Ку-лятор</h1>
+
+        <div style="text-align: center; padding: 5px">
+            Введите первое число
+            <input id="fieldOne" type="text" style="width: 200px"/>
+        </div>
+        
+        <div style="text-align: center; padding: 5px">
+            Выберите действие
+            <select id="operation">
+                <option>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+            </select>
+        </div>
+
+        <div style="text-align: center; padding: 5px">
+            Введите второе число
+            <input id="fieldTwo" type="text" style="width: 200px;" />
+        </div>
+        
+        <div style="text-align: center; padding: 5px">
+            Жмакни для расчета
+            <input type="button" value="Рассчитать" onclick="calculator()"/>
+        </div>
+       
+       <div style="text-align: center; padding: 5px">
+           Смотри, что вышло
+           <input id="result" type="text" style="width: 200px;" />
+       </div>
+        
+    </body>
+</html>
